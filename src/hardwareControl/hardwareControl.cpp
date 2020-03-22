@@ -4,6 +4,11 @@
 #include "util/types.h"
 
 
+void setupHardwarePins() {
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
+}
 
 
 void pwmControl(rgb_uint8_t values) {
