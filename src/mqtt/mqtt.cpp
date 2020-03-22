@@ -41,7 +41,34 @@ void setupMQTT() {
 
 //* Gets called when command is sent from broker
 void callback(char* topic, byte* payload, unsigned int length) {
-  
+  rgb_uint8_t rgb_val;
+
+  Serial.println();
+  Serial.print("Command from MQTT broker is : [");
+  Serial.print(topic);
+  Serial.print(" : ");
+
+  // get the first 8 characters from the payload
+  char load[8] = "";
+  for(int i = 0; i < 8; i++) {
+    char c = (char)payload[i];
+    strncat(load, &c, 1);
+  }
+  uint32_t hex_val = (uint32_t)strtol(load, NULL, 0);
+
+  // Convert the hex value into 3 RGB values
+  hexToRGBConverter(hex_val, &rgb_val);
+
+  // set the hardware pins with the given RGB values
+  pwmControl(rgb_val);
+
+  // Debug output
+  Serial.println(load);
+  Serial.println();
+  Serial.println(rgb_val.r);
+  Serial.println(rgb_val.g);
+  Serial.println(rgb_val.b);
+  Serial.println();
 }
 
 
