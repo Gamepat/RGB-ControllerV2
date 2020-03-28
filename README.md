@@ -21,7 +21,9 @@ monitor_speed = 115200
 
 ### Programming the ESP8266-01 
 
-![ESP8266-01 flash wiring](flash.jpg)
+For flashing programs onto the ESP, I made a little circuit board according to the following diagram:
+
+![ESP8266-01 flash wiring](https://cdn.solarbotics.com/wp-content//uploads/ftdy-to-esp01-diagram-2-1023x768.jpg)
 
 
 1. Hold down Reset & Flash button
