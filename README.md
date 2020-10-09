@@ -19,13 +19,21 @@ board_build.flash_mode = dout
 monitor_speed = 115200
 ```
 
-### Programming the ESP8266-01 
+---
+
+## Flashing programs onto the ESP8266-01 
+
+### Hardware:
 
 For flashing programs onto the ESP, I made a little circuit board according to the following diagram:
 
-![ESP8266-01 flash wiring](https://cdn.solarbotics.com/wp-content//uploads/ftdy-to-esp01-diagram-2-1023x768.jpg)
+![ESP8266-01 flash wiring](./pics/flash.jpg)
 
+### Flashing:
+
+To upload the code the buttons have to be pressed in the following order:
 
 1. Hold down Reset & Flash button
 2. Release Reset Button
 3. When writing has started release Flash button
+4. Wait for writing to finish
